@@ -2,7 +2,7 @@ defmodule CollegeTest do
   use ExUnit.Case
   doctest College
 
-  test "the truth" do
-    assert 1 + 1 == 2
+  test "get subjects" do
+    IO.puts 'asdasdasdss'
   end
 end

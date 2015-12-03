@@ -1,4 +1,4 @@
-# College
+# College Register
 
 **TODO: Add description**
 
