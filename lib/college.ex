@@ -1,0 +1,2 @@
+defmodule College do
+end
