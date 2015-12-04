@@ -5,8 +5,6 @@ defmodule College.Contents do
     field :semester, :integer
     belongs_to :course, College.Course
     belongs_to :subject, College.Subject
-    
-    timestamps
   end
   
 end

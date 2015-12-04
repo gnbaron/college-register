@@ -5,7 +5,5 @@ defmodule College.Course do
   schema "courses" do
     field :name, :string
     field :duration, :integer, default: 1
-
-    timestamps
   end
 end

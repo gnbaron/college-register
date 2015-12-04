@@ -3,8 +3,20 @@ defmodule College.SubjectController do
   alias College.Subject
   alias College.Repo
 
-  def getAll do
+  def show_all do
     Repo.all(Subject)
+  end
+
+  def show(id) do
+
+  end
+
+  def create(name, workload, value) do
+    Repo.insert! %Subject{name: name, workload: workload, value: value}
+  end
+
+  def update(id, name, workload, value) do
+    Repo.insert! %Subject{name: name, workload: workload, value: value}
   end
 
   # def get(id) do
@@ -26,11 +38,4 @@ defmodule College.SubjectController do
   #   #TODO
   # end
 
-  # def pipe_query do
-  #   Weather
-  #   |> where(city: "Kraków")
-  #   |> order_by(:temp_lo)
-  #   |> limit(10)
-  #   |> Repo.all
-  # end
 end
