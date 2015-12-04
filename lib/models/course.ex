@@ -2,8 +2,10 @@ defmodule College.Course do
   use Ecto.Schema
 
   @primary_key {:id, :id, autogenerate: true}
-  schema "course" do
+  schema "courses" do
     field :name, :string
     field :duration, :integer, default: 1
+
+    timestamps
   end
 end

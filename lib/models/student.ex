@@ -5,6 +5,9 @@ defmodule College.Student do
   schema "students" do
     field :name, :string
     field :email, :string
+    belongs_to :course, College.Course
+
+    timestamps
   end
   
 end
