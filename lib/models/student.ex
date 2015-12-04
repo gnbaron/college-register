@@ -5,7 +5,6 @@ defmodule College.Student do
   schema "students" do
     field :name, :string
     field :email, :string
-    belongs_to :course, College.Course
+    belongs_to :course, College.Course, references: :ra
   end
-  
 end

@@ -8,34 +8,22 @@ defmodule College.SubjectController do
   end
 
   def show(id) do
-
+    Repo.get!(Subject, id)
   end
 
-  def create(name, workload, value) do
-    Repo.insert! %Subject{name: name, workload: workload, value: value}
+  def create(name, workload \\ 0.0, value \\ 0.0) do
+    %Subject{}
+    |> Subject.changeset(%{"name" => name, "workload" => workload, "value" => value})
+    |> Repo.insert!
   end
 
-  def update(id, name, workload, value) do
-    Repo.insert! %Subject{name: name, workload: workload, value: value}
+  def update(id, name, workload \\ 0.0, value \\ 0.0) do
+    Repo.get!(Subject, id)
+    |> Subject.changeset(%{"name" => name, "workload" => workload, "value" => value})
+    |> Repo.update!
   end
 
-  # def get(id) do
-  #   Subject
-  #   |> where(id: id)
-  #   |> Repo.get
-  # end
-
-  # def delete(id) do
-  #   Subject
-  #   |> where(id: id)
-  #   |> Repo.delete
-  # end
-
-  # def delete(id, name, workload, value) do
-  #   Subject
-  #   |> where(id: id)
-  #   |> Repo.update
-  #   #TODO
-  # end
-
+  def remove(id) do
+    Repo.get!(Subject, id) |> Repo.delete!
+  end
 end
